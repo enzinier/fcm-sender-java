@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fcm-sender-java.iml" filepath="$PROJECT_DIR$/.idea/fcm-sender-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fcm-sender-java.iml" filepath="$PROJECT_DIR$/.idea/modules/fcm-sender-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fcm-sender-java_main.iml" filepath="$PROJECT_DIR$/.idea/modules/fcm-sender-java_main.iml" group="fcm-sender-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fcm-sender-java_test.iml" filepath="$PROJECT_DIR$/.idea/modules/fcm-sender-java_test.iml" group="fcm-sender-java" />
     </modules>
   </component>
 </project>
