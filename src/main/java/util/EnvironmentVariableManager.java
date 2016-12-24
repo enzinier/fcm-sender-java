@@ -3,6 +3,9 @@ package util;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * @deprecated
+ */
 public class EnvironmentVariableManager {
 
   private static EnvironmentVariableManager instance = null;
