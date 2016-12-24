@@ -15,22 +15,22 @@ import java.util.Optional;
  *
  * @author jason, @date 12/23/16 12:56 AM
  */
-public class Library {
+public class FcmSender {
 
-  private final String environmentAuthKey = "AUTH_KEY";
+  private final String fcmServerUrl = "https://fcm.googleapis.com/fcm/send";
+  private final String authKey;
 
-  public DownstreamHttpResponse sendNotification(String registrationToken) throws UnirestException {
-    Optional<String> authKeyOptional =
-        EnvironmentVariableManager.getInstance().getEnvironmentVariable(environmentAuthKey);
-    if (!authKeyOptional.isPresent()) {
-      // TODO: throw exception!
-    }
+  public FcmSender(String authKey) {
+    this.authKey = authKey;
+  }
+
+  public DownstreamHttpResponse sendNotification(DownstreamHttpMessages downstreamHttpMessages) throws UnirestException {
     Unirest.setObjectMapper(new ObjectMapperImpl());
     HttpResponse<DownstreamHttpResponse> response =
-        Unirest.post("https://fcm.googleapis.com/fcm/send")
+        Unirest.post(fcmServerUrl)
             .header("Content-Type", "application/json")
-            .header("Authorization", authKeyOptional.get())
-            .body(new DownstreamHttpMessages(registrationToken, Lists.newArrayList()))
+            .header("Authorization", authKey)
+            .body(downstreamHttpMessages)
             .asObject(DownstreamHttpResponse.class);
     DownstreamHttpResponse downstreamHttpResponse = response.getBody();
     return downstreamHttpResponse;
