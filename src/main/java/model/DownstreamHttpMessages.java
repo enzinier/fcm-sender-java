@@ -5,6 +5,9 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * ref. https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+ */
 public class DownstreamHttpMessages implements Serializable {
 
   private static final long serialVersionUID = -4670133270589402627L;

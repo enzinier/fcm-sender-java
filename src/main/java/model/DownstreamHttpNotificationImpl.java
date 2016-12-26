@@ -4,6 +4,9 @@ import com.google.common.base.MoreObjects;
 
 import java.util.List;
 
+/**
+ * ref. https://firebase.google.com/docs/cloud-messaging/http-server-ref#notification-payload-support
+ */
 public class DownstreamHttpNotificationImpl implements DownstreamHttpNotification {
 
   // Optional

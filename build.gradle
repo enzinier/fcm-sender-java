@@ -20,7 +20,8 @@ repositories {
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
-    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.8'
+
     compile 'com.mashape.unirest:unirest-java:1.4.9'
     compile 'com.google.guava:guava:20.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
