@@ -8,10 +8,11 @@ import java.io.IOException;
 
 public class ObjectMapperImpl implements com.mashape.unirest.http.ObjectMapper {
 
+  ObjectMapper objectMapper =
+      new ObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+
   @Override
   public <T> T readValue(String value, Class<T> valueType) {
-    ObjectMapper objectMapper =
-        new ObjectMapper().setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
     try {
       return objectMapper.readValue(value, valueType);
     } catch (IOException e) {
@@ -24,7 +25,7 @@ public class ObjectMapperImpl implements com.mashape.unirest.http.ObjectMapper {
   @Override
   public String writeValue(Object value) {
     try {
-      return new ObjectMapper().writeValueAsString(value);
+      return objectMapper.writeValueAsString(value);
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
