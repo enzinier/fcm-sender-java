@@ -1,4 +1,4 @@
-package util;
+package com.illicis.util;
 
 import java.util.Collection;
 

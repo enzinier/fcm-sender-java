@@ -1,6 +1,6 @@
 import com.google.common.base.MoreObjects;
 
-import model.DownstreamHttpData;
+import com.illicis.model.DownstreamHttpData;
 
 public class DownstreamHttpDataTest implements DownstreamHttpData {
 

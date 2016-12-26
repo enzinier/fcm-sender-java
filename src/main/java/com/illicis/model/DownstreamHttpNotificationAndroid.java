@@ -1,4 +1,4 @@
-package model;
+package com.illicis.model;
 
 import com.google.common.base.MoreObjects;
 

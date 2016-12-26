@@ -1,4 +1,4 @@
-package exception;
+package com.illicis.exception;
 
 public class ValidationException extends RuntimeException {
 

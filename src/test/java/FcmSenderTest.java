@@ -1,3 +1,5 @@
+import com.illicis.FcmSender;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -6,13 +8,13 @@ import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import exception.ValidationException;
-import model.DownstreamHttpData;
-import model.DownstreamHttpMessages;
-import model.DownstreamHttpNotificationAndroid;
-import model.DownstreamHttpResponse;
-import util.CollectionUtil;
-import util.EnvironmentVariableManager;
+import com.illicis.exception.ValidationException;
+import com.illicis.model.DownstreamHttpData;
+import com.illicis.model.DownstreamHttpMessages;
+import com.illicis.model.DownstreamHttpNotificationAndroid;
+import com.illicis.model.DownstreamHttpResponse;
+import com.illicis.util.CollectionUtil;
+import com.illicis.util.EnvironmentVariableManager;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

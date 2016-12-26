@@ -1,7 +1,6 @@
-package util;
+package com.illicis.util;
 
 import java.util.Map;
-import java.util.Optional;
 
 public class EnvironmentVariableManager {
 
@@ -13,7 +12,7 @@ public class EnvironmentVariableManager {
       }
     }
 
-    // TODO: throw exception
+    // TODO: throw com.illicis.exception
     return null;
   }
 }
