@@ -1,7 +1,13 @@
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import exception.ValidationException;
+import model.DownstreamHttpData;
 import model.DownstreamHttpMessages;
 import model.DownstreamHttpNotificationAndroid;
 import model.DownstreamHttpResponse;
@@ -17,6 +23,7 @@ import static org.junit.Assert.assertThat;
  *
  * @author jason, @date 12/23/16 12:56 AM
  */
+@RunWith(JUnit4.class)
 public class FcmSenderTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(FcmSenderTest.class);
@@ -26,8 +33,9 @@ public class FcmSenderTest {
   private final String registrationIdForTest =
       EnvironmentVariableManager.getEnvironmentVariable("REGISTRATION_ID_TEST");
 
-  @Test
-  public void sendNotification() throws Exception {
+  @Rule public ExpectedException thrown = ExpectedException.none();
+
+  private DownstreamHttpNotificationAndroid getDownstreamHttpNotificationAndroid() {
     final String notificationTitle = "Hello";
     final String notificationBody = "This is test notification!";
     DownstreamHttpNotificationAndroid downstreamHttpNotificationAndroid =
@@ -36,10 +44,20 @@ public class FcmSenderTest {
             .setBody(notificationBody)
             .build();
 
+    return downstreamHttpNotificationAndroid;
+  }
+
+  private DownstreamHttpData getDownstreamHttpData() {
+    return new DownstreamHttpDataTest("Jason", "100");
+  }
+
+  @Test
+  public void sendNotification() throws Exception {
     DownstreamHttpMessages downstreamHttpMessages =
         new DownstreamHttpMessages(registrationIdForTest, null)
             .setContentAvailable(true)
-            .setNotification(downstreamHttpNotificationAndroid)
+            .setNotification(this.getDownstreamHttpNotificationAndroid())
+            .setData(this.getDownstreamHttpData())
             .setDryRun(false);
 
     FcmSender fcmSender = new FcmSender(authKeyForTest);
@@ -53,5 +71,27 @@ public class FcmSenderTest {
         "Result is null or empty.",
         false,
         is(CollectionUtil.isNullOrEmpty(downstreamHttpResponse.getResults())));
+  }
+
+  @Test
+  public void validationForNoParameter() throws Exception {
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage("DownstreamHttpMessages can not be null!");
+
+    new FcmSender(authKeyForTest).sendNotification(null);
+  }
+
+  @Test
+  public void validationForLackOfRegistrationId() throws Exception {
+    thrown.expect(ValidationException.class);
+    thrown.expectMessage("Must be either to or registration id!");
+
+    DownstreamHttpMessages downstreamHttpMessages =
+        new DownstreamHttpMessages(null, null)
+            .setContentAvailable(true)
+            .setNotification(this.getDownstreamHttpNotificationAndroid())
+            .setDryRun(false);
+
+    new FcmSender(authKeyForTest).sendNotification(downstreamHttpMessages);
   }
 }
