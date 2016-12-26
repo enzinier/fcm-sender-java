@@ -24,7 +24,9 @@ public class FcmSender {
     this.authKey = authKey;
   }
 
-  public DownstreamHttpResponse sendNotification(DownstreamHttpMessages downstreamHttpMessages) throws UnirestException {
+  public DownstreamHttpResponse sendNotification(DownstreamHttpMessages downstreamHttpMessages)
+      throws UnirestException {
+    // TODO: downstreamHttpMessages Validation!
     Unirest.setObjectMapper(new ObjectMapperImpl());
     HttpResponse<DownstreamHttpResponse> response =
         Unirest.post(fcmServerUrl)

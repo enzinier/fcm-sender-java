@@ -2,7 +2,15 @@ package model;
 
 import com.google.common.base.MoreObjects;
 
-public class DownstreamHttpNotificationIos extends DownstreamHttpNotificationImpl {
+import java.io.Serializable;
+
+/**
+ * ref. https://firebase.google.com/docs/cloud-messaging/http-server-ref#notification-payload-support
+ */
+public class DownstreamHttpNotificationIos extends DownstreamHttpNotificationImpl
+    implements Serializable {
+
+  private static final long serialVersionUID = 8597135243052156128L;
 
   // Optional
   private final String title;
