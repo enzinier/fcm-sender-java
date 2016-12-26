@@ -2,6 +2,20 @@
 
 fcm-sender-java is libary for sending notification to FCM server.
 
+## Add dependency
+```xml
+<dependency>
+  <groupId>com.illicis</groupId>
+  <artifactId>fcm-sender-java</artifactId>
+  <version>0.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+
+```gradle
+compile 'com.illicis:fcm-sender-java:0.0.1'
+```
+
 ## Usage
 
 ```java
