@@ -1,5 +1,3 @@
-import com.illicis.FcmSender;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -8,6 +6,7 @@ import org.junit.runners.JUnit4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.illicis.FcmSender;
 import com.illicis.exception.ValidationException;
 import com.illicis.model.DownstreamHttpData;
 import com.illicis.model.DownstreamHttpMessages;
