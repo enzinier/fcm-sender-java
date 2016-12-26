@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fd0a291-9ba7-42d3-ac0e-e1bdb296629d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/illicis/util/EnvironmentVariableManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/illicis/util/EnvironmentVariableManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/FcmSenderTest.java" afterPath="$PROJECT_DIR$/src/test/java/FcmSenderTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/settings.xml" afterPath="" />
     </list>
     <ignored path="fcm-sender-java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1085,7 +1083,7 @@
       <workItem from="1482707071858" duration="3276000" />
       <workItem from="1482710358033" duration="345000" />
       <workItem from="1482747496742" duration="5084000" />
-      <workItem from="1482761443404" duration="228000" />
+      <workItem from="1482761443404" duration="364000" />
     </task>
     <servers />
   </component>
@@ -1122,7 +1120,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15377000" />
+    <option name="totallyTimeSpent" value="15513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="6" />
