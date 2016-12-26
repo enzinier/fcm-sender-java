@@ -6,7 +6,8 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * ref. https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
+ * ref.
+ * https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json
  */
 public class DownstreamHttpMessages implements Serializable {
 

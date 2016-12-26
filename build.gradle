@@ -21,7 +21,6 @@ repositories {
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.8'
-
     compile 'com.mashape.unirest:unirest-java:1.4.9'
     compile 'com.google.guava:guava:20.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
