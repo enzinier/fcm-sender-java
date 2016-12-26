@@ -8,7 +8,6 @@ fcm-sender-java is libary for sending notification to FCM server.
   <groupId>com.illicis</groupId>
   <artifactId>fcm-sender-java</artifactId>
   <version>0.0.1</version>
-  <type>pom</type>
 </dependency>
 ```
 
@@ -17,7 +16,6 @@ compile 'com.illicis:fcm-sender-java:0.0.1'
 ```
 
 ## Usage
-
 ```java
 DownstreamHttpNotification downstreamHttpNotificationAndroid =
   DownstreamHttpNotificationAndroid.builder()
@@ -32,9 +30,11 @@ DownstreamHttpMessages downstreamHttpMessages =
     .setData(this.getDownstreamHttpData())
     .setDryRun(false);
 
-FcmSender fcmSender = new FcmSender("Your Auth Key");
+FcmSender fcmSender = new FcmSender("Your Server Key");
 DownstreamHttpResponse downstreamHttpResponse = fcmSender.sendNotification(downstreamHttpMessages);
 ```
+You can find server key from setting of firebase console. (Project Setting > Cloud Messaging)
+
 
 ## Reference
 - https://developers.google.com/cloud-messaging/http-server-ref
