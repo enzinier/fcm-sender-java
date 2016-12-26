@@ -34,7 +34,8 @@ FcmSender fcmSender = new FcmSender("Your Server Key");
 DownstreamHttpResponse downstreamHttpResponse = fcmSender.sendNotification(downstreamHttpMessages);
 ```
 You can find server key from setting of firebase console. (Project Setting > Cloud Messaging)
-
+DownstreamHttpData is just interface for getting common parameter.
+Therefore you should write code to include your own data implement DownstreamHttpData.
 
 ## Reference
 - https://developers.google.com/cloud-messaging/http-server-ref
