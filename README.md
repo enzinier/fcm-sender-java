@@ -4,6 +4,17 @@ fcm-sender-java is libary for sending notification to FCM server.
 
 ## Add dependency
 ```xml
+<repositories>
+  <repository>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+    <id>bintray-enzinier-fcm-sender-java</id>
+    <name>bintray</name>
+    <url>http://dl.bintray.com/enzinier/fcm-sender-java</url>
+  </repository>
+</repositories>
+
 <dependency>
   <groupId>com.illicis</groupId>
   <artifactId>fcm-sender-java</artifactId>
